@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
 df = pd.read_csv("ecommerce_preparados.csv")
@@ -9,10 +8,8 @@ print(df.head(20).to_string())
 df.drop_duplicates(subset="Título", inplace=True)
 print(df.head(20).to_string())
 
-label_encoder = LabelEncoder()
-df["Título_cod"] = label_encoder.fit_transform(df["Título"]) # Transformar titulo em um número
 
-#df_corr = df[["Título_cod", "Nota_MinMax", "N_Avaliações_MinMax", "Desconto_MinMax", "Preço_MinMax", "Marca_Cod", "Material_Cod", "Temporada_Cod", "Qtd_Vendidos_Cod", "Marca_Freq", "Material_Freq"]].corr()
+#df_corr = df[["Nota_MinMax", "N_Avaliações_MinMax", "Desconto_MinMax", "Preço_MinMax", "Marca_Cod", "Material_Cod", "Temporada_Cod", "Qtd_Vendidos_Cod", "Marca_Freq", "Material_Freq"]].corr()
 # Primeiro fiz uma analise com os dados Normalizado e tratados, logo depois olhei quais deles tinham correlações altas, tanto negativas quanto possitivas
 
 # Logo abaixo fiz uma analise apenas com as Variantes que tem correlações altas para ter certeza.
